@@ -1,0 +1,38 @@
+title: "The Mysterious Door"
+start: 'start'
+initial_state: { }
+nodes:
+  start:
+    text: |
+      You wake up in a dark room. There's a mysterious door in front of you.
+    choices:
+      - text: "Open the door"
+        target: hallway
+      - text: "Look around"
+        target: look_around
+  look_around:
+    text: |
+      You find a small key under the mat.
+    choices:
+      - text: "Take the key and open the door"
+        target: hallway
+        set_state:
+          has_key: true
+  hallway:
+    text: |
+      The hallway is dimly lit. Ahead, a shadow moves.
+    choices:
+      - text: "Approach the shadow"
+        target: shadow
+      - text: "Hide and wait"
+        target: wait
+  shadow:
+    text: |
+      It's just a coat rack. You chuckle and relax.
+    choices:
+  wait:
+    text: |
+      Time passes. Nothing happens. You decide to move on.
+    choices:
+      - text: "Walk down the hall"
+        target: shadow

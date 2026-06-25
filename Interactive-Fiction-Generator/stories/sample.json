@@ -1,0 +1,38 @@
+{
+  "title": "Simple Example",
+  "start": "entrance",
+  "initial_state": {},
+  "nodes": {
+    "entrance": {
+      "text": "You stand at the entrance of a cave.",
+      "choices": [
+        {
+          "text": "Enter the cave",
+          "target": "dark"
+        },
+        {
+          "text": "Run away",
+          "target": "run"
+        }
+      ]
+    },
+    "dark": {
+      "text": "It's dark inside. You find a torch.",
+      "choices": [
+        {
+          "text": "Take the torch and proceed",
+          "target": "deep",
+          "set_state": { "has_torch": true }
+        }
+      ]
+    },
+    "run": {
+      "text": "You run home safely. The adventure ends.",
+      "choices": []
+    },
+    "deep": {
+      "text": "With your torch, you find treasure! Congratulations.",
+      "choices": []
+    }
+  }
+}

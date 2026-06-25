@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h4>Upload a Story File</h4>
+  <form method="POST" enctype="multipart/form-data" class="mb-3 mt-3 p-4 border rounded bg-light">
+    <div class="mb-3">
+      <input type="file" name="file" accept=".json,.yaml,.yml" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload</button>
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+  </form>
+  <small class="text-muted">Accepted formats: JSON, YAML. See <a target="_blank" href="https://github.com/">docs/examples</a> for schema details.</small>
+{% endblock %}
